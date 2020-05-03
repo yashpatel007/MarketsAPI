@@ -20,9 +20,9 @@ how to install maven [here](https://maven.apache.org/install.html).
   
   
 ### API Features
-  * Get Current Market Snapshot
+  * **Get Current Market Snapshot**
       * [localhost:8080/market](http://localhost:8080/market)
-  * Get Past Datapoints By Name :
+  * **Get Past Datapoints By Name**
       * [localhost:8080/market/name/{name}](http://localhost:8080/market/NASDAQ), Get the Past data for NASDAQ
       
       * All other acessible names are 
