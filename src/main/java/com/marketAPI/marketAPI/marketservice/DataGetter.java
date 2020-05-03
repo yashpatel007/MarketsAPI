@@ -56,6 +56,14 @@ public class DataGetter {
            return marketRepo.findByDate(date);
        }
        
+       
+       public List<MarketData> getByNameAndDate(String name, java.sql.Date date){
+            if(nameAbbriviations.containsKey(name)){
+           return marketRepo.findByNameAndDate(nameAbbriviations.get(name), date);
+          
+            }
+            return null;
+       }
     
     
     

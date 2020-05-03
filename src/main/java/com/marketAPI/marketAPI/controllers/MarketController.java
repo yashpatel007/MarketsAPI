@@ -11,6 +11,7 @@ import com.marketAPI.marketAPI.marketservice.DataGetter;
 import com.marketAPI.marketAPI.repository.MarketRepository;
 import java.sql.Date;
 import java.util.List;
+import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -37,10 +38,21 @@ public class MarketController {
         return data.getMarketSnapshot();
     }
     
+    @RequestMapping("/market/{id}")
+    public Optional<MarketData> getById(@PathVariable("id") Long id){
+           return  marketRepo.findById(id);
+    }
+    
     @RequestMapping("/all")
     public Iterable<MarketData> test(){
         return marketRepo.findAll();
     }
+    
+     @RequestMapping("market/name/{name}/date/{date}")
+    public List<MarketData> getByNameAndDate(@PathVariable("date") String date,@PathVariable("name") String name){
+        return dataGetter.getByNameAndDate(name, Date.valueOf(date));
+    }
+    
     
     @RequestMapping("/market/name/{name}")
     public List<MarketData> getByName(@PathVariable("name") String name){
@@ -51,9 +63,6 @@ public class MarketController {
     public List<MarketData> getByDate(@PathVariable("date") String date){
         return dataGetter.getByDate(Date.valueOf(date));
     }
-    
-    
-    
     
     
 }

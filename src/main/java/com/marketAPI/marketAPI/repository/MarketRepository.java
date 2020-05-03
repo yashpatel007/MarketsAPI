@@ -35,5 +35,8 @@ public interface MarketRepository extends  CrudRepository<MarketData, Long> {
     public List<MarketData> findByDate(java.sql.Date date);
     
     
+    @Query(value ="SELECT * FROM market_data WHERE name=:name and date=:date" ,nativeQuery = true)
+    public List<MarketData> findByNameAndDate(String name,java.sql.Date date);
+    
     
 }

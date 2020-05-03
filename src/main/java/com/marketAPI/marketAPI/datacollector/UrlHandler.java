@@ -77,13 +77,20 @@ public class UrlHandler {
 
             String delta1= e.getElementsByClass("sign-f").text();
             String delta2= e.getElementsByClass("sign-t").text();
-            if(delta1.equals("")){
+            System.out.println(delta1);
+            System.out.println(delta2);
+            
+            if(delta1.equals("") && delta2.equals("")){
+             
+                result.put("abschange","0" );
+                result.put("relchange", "0");
+                
+            }else if(delta1.equals("")){
                 
                 String[] d2= delta2.split(" ");
                 result.put("abschange", d2[1]);
                 result.put("relchange", d2[4]);
-            }
-            if(delta2.equals("")){
+            }else if(delta2.equals("")){
                 String[] d1= delta1.split(" ");
                 result.put("abschange", d1[4]);
                 result.put("relchange", d1[1]);
