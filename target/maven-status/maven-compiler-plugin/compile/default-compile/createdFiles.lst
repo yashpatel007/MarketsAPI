@@ -1,0 +1,5 @@
+com\marketAPI\marketAPI\datacollector\UrlHandler.class
+com\marketAPI\marketAPI\datacollector\Data.class
+com\marketAPI\marketAPI\MarketApiApplication.class
+com\marketAPI\marketAPI\controllers\MarketController.class
+com\marketAPI\marketAPI\datacollector\MarketData.class
